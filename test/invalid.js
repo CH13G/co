@@ -11,7 +11,7 @@ describe('yield* <invalid>', function () {
         throw new Error('lol');
       } catch (err) {
         assert(err instanceof TypeError);
-        assert(~err.message.indexOf('undefined is not a function'));
+        assert(~err.message.indexOf('is not a function'));
       }
     })
   })
