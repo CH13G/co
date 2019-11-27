@@ -84,6 +84,8 @@ co(function *(){
   var a = Promise.resolve(1);
   var b = Promise.resolve(2);
   var c = Promise.resolve(3);
+  yield 1;
+  yield* '123';
   var res = yield [a, b, c];
   console.log(res);
   // => [1, 2, 3]
@@ -116,6 +118,8 @@ function onerror(err) {
   - objects (parallel execution)
   - generators (delegation)
   - generator functions (delegation)
+  - number string undefined (basic type)
+  - generator other kinds of iterables (delegation) e.g. arrays, strings or arguments objects.
 
 Nested `yieldable` objects are supported, meaning you can nest
 promises within objects within arrays, and so on!
